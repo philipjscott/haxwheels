@@ -1,9 +1,9 @@
 ## General tips
 
 * Don't over-engineer; embrace the possibility of refactoring code
-* Git hooks have been added to run tests every commit
+* Git hooks have been added to run tests every push 
   * if you don't want to run the tests, add the `--no-verify` flag
-  * Eg. `git commit -m "my message" --no-verify`
+  * Eg. `git push origin mybranch --no-verify
 
 ## Making issues
 

@@ -11,7 +11,7 @@
     "fix": "standard --fix",
     "build": "parcel build ./client/index.html --public-url '.' --out-dir static",
     "dev": "nodemon ./bin/server",
-    "precommit": "yarn run test"
+    "prepush": "yarn run test"
   },
   "standard": {
     "ignore": [
