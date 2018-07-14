@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.16.3",
+    "keycode": "^2.2.0",
     "standard": "^11.0.1"
   }
 }
