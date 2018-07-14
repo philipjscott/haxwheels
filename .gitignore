@@ -1,5 +1,6 @@
 node_modules/
 static/
 .cache/
+.nyc_output/
 *.swo
 *.swp

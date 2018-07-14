@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard",
-    "test": "standard",
     "fix": "standard --fix",
+    "test": "yarn run lint && nyc mocha --recursive test/*",
     "build": "parcel build ./client/index.html --public-url '.' --out-dir static",
     "dev": "nodemon ./bin/server",
     "prepush": "yarn run test"
@@ -19,8 +19,11 @@
     ]
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "husky": "^0.14.3",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.2",
+    "nyc": "^12.0.2",
     "parcel-bundler": "^1.9.6"
   },
   "dependencies": {
