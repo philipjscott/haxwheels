@@ -2,7 +2,9 @@
 
 'use strict'
 
-const { Point2 } = require('../game/math')
+require('module-alias/register')
+
+const { Point2 } = require('@game/math')
 const { expect } = require('chai')
 
 describe('math library', () => {

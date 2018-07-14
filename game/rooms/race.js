@@ -1,4 +1,5 @@
 const { Room } = require('colyseus')
+const Player = require('../player')
 
 class RaceRoom extends Room {
   onInit () {
@@ -8,7 +9,34 @@ class RaceRoom extends Room {
   }
 
   onJoin (client) {
+    this.state.players[client.sessionId] = new Player(0, 0)
 
+    console.log(`Player ${client.sessionId} joined!`)
+  }
+
+  onMessage (client, data) {
+    const step = 0.1
+    const player = this.state.players[client.sessionId]
+
+    switch (data) {
+      case 'left':
+        player.position.x -= step
+        break
+      case 'right':
+        player.position.x += step
+        break
+      case 'down':
+        player.position.y -= step
+        break
+      case 'up':
+        player.position.x += step
+    }
+  }
+
+  onLeave (client) {
+    delete this.state.players[client.sessionId]
+
+    console.log(`Player ${client.sessionId} left!`)
   }
 }
 

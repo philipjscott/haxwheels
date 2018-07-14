@@ -2,7 +2,9 @@
 
 'use strict'
 
-const Player = require('../game/player')
+require('module-alias/register')
+
+const Player = require('@game/player')
 const { expect } = require('chai')
 
 describe('Player class', () => {
