@@ -25,6 +25,7 @@
   * This means all the commits in a branch will be combined into a single commit, which will be merged into master
 * When merging, you can choose the commit message of the squashed commit, _please follow the following set of rules_:
   * Follow the AngularJS git commit message [convention](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)
+  * Use present tense in commit messages!
   * TLDR; format your commit message as follows:
 
 ```
