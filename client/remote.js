@@ -1,6 +1,6 @@
-console.log('Hello Again!')
+import keycode from 'keycode'
 
-var keycode = require('keycode')
+console.log('Hello Again!')
 
 const KeyDownHandler = (e) => {
   e.preventDefault()
