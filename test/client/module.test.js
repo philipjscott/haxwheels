@@ -3,6 +3,7 @@
 'use strict'
 
 import 'module-alias/register'
+
 import { expect } from 'chai'
 import myModule from '@client/module'
 

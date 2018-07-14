@@ -18,7 +18,9 @@ class RaceRoom extends Room {
     const step = 0.1
     const player = this.state.players[client.sessionId]
 
-    switch (data) {
+    console.log('Message received!', data)
+
+    switch (data.move) {
       case 'left':
         player.position.x -= step
         break
@@ -29,7 +31,7 @@ class RaceRoom extends Room {
         player.position.y -= step
         break
       case 'up':
-        player.position.x += step
+        player.position.y += step
     }
   }
 
