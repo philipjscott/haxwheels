@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 
-const PORT = 8080
+const PORT = process.env.PORT || 8080
 
+const colyseus = require('colyseus')
 const http = require('http')
 const app = require('../app')
-const server = http.createServer(app)
+const registerRooms = require('../game/register')
 
+const server = http.createServer(app)
+const gameServer = new colyseus.Server({ server })
+
+registerRooms(gameServer)
 server.listen(PORT, (err) => {
   if (err) throw err
 
