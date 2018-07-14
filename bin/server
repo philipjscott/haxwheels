@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+const PORT = 8080
+
+const http = require('http')
+const app = require('../app')
+const server = http.createServer(app)
+
+server.listen(PORT, (err) => {
+  if (err) throw err
+
+  console.log(`Server listening on port ${PORT}`)
+})
