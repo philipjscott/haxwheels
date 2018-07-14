@@ -8,7 +8,7 @@ const room = client.join('race')
 
 console.log('Client JavaScript loaded!')
 
-room.listen('players/:id/:attribute', (change) => {
+room.listen('players/:id/position/:attribute', (change) => {
   console.log(change.path.id, change.path.attribute, change.value)
 })
 
