@@ -1,6 +1,9 @@
 ## General tips
 
 * Don't over-engineer; embrace the possibility of refactoring code
+* Git hooks have been added to run tests every commit
+  * if you don't want to run the tests, add the `--no-verify` flag
+  * Eg. `git commit -m "my message" --no-verify`
 
 ## Making issues
 
