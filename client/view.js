@@ -3,20 +3,6 @@
 import * as PIXI from 'pixi.js'
 import * as assets from './assets'
 
-
-PIXI.loader.add('sprite', assets.sprite).load((loader, resources) => {
-  const sprite = new PIXI.Sprite(resources.sprite.texture)
-
-  sprite.x = app.renderer.width / 2
-  sprite.y = app.renderer.height / 2
-  sprite.anchor.x = 0.5
-  sprite.anchor.y = 0.5
-
-  app.stage.addChild(sprite)
-  app.ticker.add(() => {
-    sprite.rotation += 0.01
-  })
-})
 class View {
   constructor () {
     this._app = new PIXI.Application()
@@ -25,14 +11,42 @@ class View {
     document.body.appendChild(this._app.view)
   }
 
-  _createPlayer (id) {
+  _createPlayer (id, position) {
     const sprite = PIXI.Sprite.fromImage(assets.sprite)
 
+    sprite.x = position.x
+    sprite.y = position.y
+
+    this._app.stage.addChild(sprite)
     this._players[id] = sprite
   }
 
-  update (change) {
+  _removePlayer (id) {
+    this._players[id].destroy()
+  }
 
+  _updatePosition (id, coord, value) {
+    const sprite = this._players[id]
+
+    sprite[coord] = value
+  }
+
+  updatePlayer (change) {
+    switch (change.operation) {
+      case 'add':
+        this._createPlayer(change.path.id, change.value.position)
+        break
+      case 'remove':
+        this._createRemove(change.path.id)
+    }
+  }
+
+  updatePosition (change) {
+    console.log(change)
+
+    if (change.operation === 'replace') {
+      this._updatePosition(change.path.id, change.path.attribute, change.value)
+    }
   }
 }
 

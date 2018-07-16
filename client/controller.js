@@ -28,7 +28,7 @@ class Controller {
           this._transmitter.send({ move: 'up' })
           break
         case controls.down:
-          this._transmitter.send({ move: 'left' })
+          this._transmitter.send({ move: 'down' })
           break
       }
     }
