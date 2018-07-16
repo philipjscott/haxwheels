@@ -14,6 +14,5 @@ controller.register({
   down: 'down',
   left: 'left',
   right: 'right'
-})
 room.listen('players/:id', change => view.updatePlayer(change))
 room.listen('players/:id/position/:attribute', change => view.updatePosition(change))
