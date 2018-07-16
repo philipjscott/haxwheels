@@ -15,7 +15,7 @@ class RaceRoom extends Room {
   }
 
   onMessage (client, data) {
-    const step = 0.1
+    const step = 5
     const player = this.state.players[client.sessionId]
 
     console.log('Message received!', data)
@@ -27,10 +27,10 @@ class RaceRoom extends Room {
       case 'right':
         player.position.x += step
         break
-      case 'down':
+      case 'up':
         player.position.y -= step
         break
-      case 'up':
+      case 'down':
         player.position.y += step
     }
   }
