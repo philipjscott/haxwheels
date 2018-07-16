@@ -1,27 +1,24 @@
 'use strict'
 
+import Controller from './controller'
 import * as Colyseus from 'colyseus.js'
-import { $ } from './util'
 import * as PIXI from 'pixi.js'
 import * as assets from './assets'
-
-console.log(assets, 'foo')
 
 const app = new PIXI.Application()
 const client = new Colyseus.Client('ws://localhost:8080')
 const room = client.join('race')
-const directions = ['up', 'down', 'left', 'right']
+const controller = new Controller(room)
+
+controller.register({
+  up: 'up',
+  down: 'down',
+  left: 'left',
+  right: 'right'
+})
 
 room.listen('players/:id/position/:attribute', (change) => {
   console.log(change.path.id, change.path.attribute, change.value)
-})
-
-directions.forEach((direction) => {
-  $('#' + direction).addEventListener('click', () => {
-    console.log(`${direction} clicked!`)
-
-    room.send({ move: direction })
-  })
 })
 
 document.body.appendChild(app.view)
