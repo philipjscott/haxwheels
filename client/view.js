@@ -37,7 +37,7 @@ class View {
         this._createPlayer(change.path.id, change.value.position)
         break
       case 'remove':
-        this._createRemove(change.path.id)
+        this._removePlayer(change.path.id)
     }
   }
 
