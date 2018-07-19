@@ -15,18 +15,13 @@ class View {
   }
 
   _renderLoop () {
-    this._app.ticker.add(() => {
+    this._app.ticker.add((delta) => {
       for (const id in this._positions) {
         const sprite = this._sprites[id]
         const position = this._positions[id]
 
-        console.log(this._app.ticker.elapsedMS)
-
-        var lerpRate = 10
-        var delta = (this._app.ticker.elapsedMS / 1000) * lerpRate
-
-        sprite.x = cosineInterp(sprite.x, position.x, delta)
-        sprite.y = cosineInterp(sprite.y, position.y, delta)
+        sprite.x = cosineInterp(sprite.x, position.x, delta / 10)
+        sprite.y = cosineInterp(sprite.y, position.y, delta / 10)
       }
     })
   }
