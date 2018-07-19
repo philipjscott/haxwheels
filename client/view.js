@@ -20,6 +20,8 @@ class View {
         const sprite = this._sprites[id]
         const position = this._positions[id]
 
+        console.log(this._app.ticker.elapsedMS)
+
         var lerpRate = 10
         var delta = (this._app.ticker.elapsedMS / 1000) * lerpRate
 
@@ -53,7 +55,7 @@ class View {
         this._createPlayer(change.path.id, change.value.position)
         break
       case 'remove':
-        this._createRemove(change.path.id)
+        this._removePlayer(change.path.id)
     }
   }
 

@@ -28,17 +28,17 @@
     "chai": "^4.1.2",
     "colyseus.js": "^0.9.9",
     "husky": "^0.14.3",
+    "keycode": "^2.2.0",
     "mocha": "^5.2.0",
     "module-alias": "^2.1.0",
     "nodemon": "^1.18.2",
     "nyc": "^12.0.2",
     "parcel-bundler": "^1.9.6",
-    "pixi.js": "^4.8.1"
+    "pixi.js": "^4.8.1",
+    "standard": "^11.0.1"
   },
   "dependencies": {
     "colyseus": "^0.9.11",
-    "express": "^4.16.3",
-    "keycode": "^2.2.0",
-    "standard": "^11.0.1"
+    "express": "^4.16.3"
   }
 }
