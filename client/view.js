@@ -29,9 +29,14 @@ class View {
   _createPlayer (id, position) {
     const sprite = PIXI.Sprite.fromImage(assets.sprite)
 
-    this._app.stage.addChild(sprite)
+    // skip lerp for initialize position
+    sprite.x = position.x
+    sprite.y = position.y
+
     this._positions[id] = position
     this._sprites[id] = sprite
+
+    this._app.stage.addChild(sprite)
   }
 
   _removePlayer (id) {
@@ -55,8 +60,6 @@ class View {
   }
 
   updatePosition (change) {
-    // console.log(change)
-
     if (change.operation === 'replace') {
       this._updatePosition(change.path.id, change.path.attribute, change.value)
     }
