@@ -15,12 +15,13 @@ class View {
   }
 
   _renderLoop () {
-    this._app.ticker.add((delta) => {
+    this._app.ticker.add(() => {
       for (const id in this._positions) {
         const sprite = this._sprites[id]
         const position = this._positions[id]
 
-        console.log(delta)
+        var lerpRate = 10
+        var delta = (this._app.ticker.elapsedMS / 1000) * lerpRate
 
         sprite.x = cosineInterp(sprite.x, position.x, delta)
         sprite.y = cosineInterp(sprite.y, position.y, delta)
@@ -57,7 +58,7 @@ class View {
   }
 
   updatePosition (change) {
-    console.log(change)
+    // console.log(change)
 
     if (change.operation === 'replace') {
       this._updatePosition(change.path.id, change.path.attribute, change.value)

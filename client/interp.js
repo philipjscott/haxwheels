@@ -5,7 +5,7 @@ function linearInterp (a, b, t) {
 }
 
 function cosineInterp (a, b, t) {
-  return linearInterp(a, b, 0.5 * (1 - Math.cos(t * Math.PI)))
+  return linearInterp(a, b, (1 - Math.cos(t * Math.PI)))
 }
 
 export {
