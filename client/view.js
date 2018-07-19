@@ -17,11 +17,12 @@ class View {
   _renderLoop () {
     this._app.ticker.add((delta) => {
       for (const id in this._positions) {
+        const lerpRate = 5
         const sprite = this._sprites[id]
         const position = this._positions[id]
 
-        sprite.x = cosineInterp(sprite.x, position.x, delta / 10)
-        sprite.y = cosineInterp(sprite.y, position.y, delta / 10)
+        sprite.x = cosineInterp(sprite.x, position.x, delta / lerpRate)
+        sprite.y = cosineInterp(sprite.y, position.y, delta / lerpRate)
       }
     })
   }
@@ -29,7 +30,7 @@ class View {
   _createPlayer (id, position) {
     const sprite = PIXI.Sprite.fromImage(assets.sprite)
 
-    // skip lerp for initialize position
+    // skip lerp when initializing position
     sprite.x = position.x
     sprite.y = position.y
 
