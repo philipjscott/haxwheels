@@ -1,7 +1,7 @@
 'use strict'
 
 import Controller from 'key-controller'
-import {virtuals, keymap} from './controller.js'
+import {virtuals, keymap} from './virtuals.js'
 import View from './view'
 import * as Colyseus from 'colyseus.js'
 
