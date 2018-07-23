@@ -21,11 +21,4 @@ const virtuals = {
   }
 }
 
-const keymap = {
-  up: 'up',
-  down: 'down',
-  left: 'left',
-  right: 'right'
-}
-
-export {virtuals, keymap}
+export default virtuals
