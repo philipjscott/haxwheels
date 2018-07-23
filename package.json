@@ -28,6 +28,7 @@
     "chai": "^4.1.2",
     "colyseus.js": "^0.9.9",
     "husky": "^0.14.3",
+    "key-controller": "^1.0.0",
     "keycode": "^2.2.0",
     "mocha": "^5.2.0",
     "module-alias": "^2.1.0",
