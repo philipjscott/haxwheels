@@ -3457,6 +3457,10 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
+key-controller@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/key-controller/-/key-controller-1.0.0.tgz#0afffbe995a2bbeeb62d6b89fd27a6f81534c9ae"
+
 keycode@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/keycode/-/keycode-2.2.0.tgz#3d0af56dc7b8b8e5cba8d0a97f107204eec22b04"
