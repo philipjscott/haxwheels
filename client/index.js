@@ -11,12 +11,12 @@ const controller = new Controller(room, virtuals)
 const view = new View()
 
 const keymap = {
-  up: 'up',
-  down: 'down',
-  left: 'left',
-  right: 'right'
+  up: ['ArrowUp', 'w'],
+  down: ['ArrowDown', 's'],
+  left: ['ArrowLeft', 'a'],
+  right: ['ArrowRight', 'd']
 }
-controller.register(keymap)
 
+controller.register(keymap)
 room.listen('players/:id', change => view.updatePlayer(change))
 room.listen('players/:id/position/:attribute', change => view.updatePosition(change))
