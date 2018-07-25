@@ -1,24 +1,23 @@
-const virtuals = {
-  up: {
+const directions = ['up', 'down', 'left', 'right']
+let virtuals = {}
+
+directions.forEach((key) => {
+  virtuals[key] = {
     keydown (model) {
-      model.send({move: 'up'})
-    }
-  },
-  down: {
-    keydown (model) {
-      model.send({move: 'down'})
-    }
-  },
-  left: {
-    keydown (model) {
-      model.send({move: 'left'})
-    }
-  },
-  right: {
-    keydown (model) {
-      model.send({move: 'right'})
+      console.log(key, true)
+      let data = {}
+      data[key] = true
+
+      model.send(data)
+    },
+    keyup (model) {
+      console.log(key, false)
+      let data = {}
+      data[key] = false
+
+      model.send(data)
     }
   }
-}
+})
 
 export default virtuals
