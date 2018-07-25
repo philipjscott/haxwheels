@@ -11,6 +11,7 @@
     "test": "yarn run lint && nyc mocha --require babel-core/register --recursive test/*",
     "build": "parcel build ./client/index.html --public-url /static --out-dir static",
     "dev": "nodemon ./bin/server",
+    "start": "./bin/server",
     "prepush": "yarn run test"
   },
   "standard": {
