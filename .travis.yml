@@ -9,6 +9,7 @@ deploy:
   provider: heroku
   api_key:
     secure: rC3JTZYWPNyv5DeH1sdGEHoKqTJwPjXY8+giGaQTTTGqwDDf/OxFIqFkzPOeBXlx+M9pTNeUcszE/5y6bGAY1TmEohGHOedCbz4aPns6BvOHdmkMNahOxYZJoXVP4zon7EPBoHSYUlruTdvkHG0Dm4lu59QevdKesRI94K+69jpLXyMFKyc9ovhqalV8qg1ybpai7Jby8hBc5h5kIBBZ2B7+11/vUBUQePlXBLgrEO2rciLgf6W1MRueh4YQ/vd7Y6TTYBUVF6OeUBWy9DP3vJlvNpUi/37uIPP91gNhzRB0EBujc797FDdQcRGxdDVxelrOW9OTnNFKuJJ8S94niNRHJ9ogBhJVXJ4Y0vB+DvFASw+XRu1UhVYAz/WO7pJrxcJ1EpFZKQUbTD9dmzNH50luUrl+S/376AqmE5O6AOyidqXVpagHWZCX7vvzW4vEz5elDYe/ULdu+w3pq8Uhfu9VisZRV7jCFaOY5aDMPz/+9La//DhmpXcD+CK9gEH5L1JzoClDWXX4zaJ5uf8eT8XqynUolWV0ckSePqA1PVxKEZflYy+nski5xdEPT245XonzjNEFtjPuAavHPo+xU8EBw9NEeM75/F/SQ/U7jntxySx7p06L0/mALnFyUlPwFB5qhwHciwoHMGZrtvTrLLxXL0T1LgglQk3toCpGJsA=
+  skip_cleanup: true
   app: haxwheels
   on:
     repo: ScottyFillups/haxwheels
