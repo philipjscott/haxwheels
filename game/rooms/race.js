@@ -55,12 +55,6 @@ class RaceRoom extends Room {
 
     console.log(`Player ${client.sessionId} left!`)
   }
-
-  onDispose () {
-    /* for (const playerId in this.state.players) {
-      delete this.state.players[playerId]
-    } */
-  }
 }
 
 module.exports = RaceRoom
