@@ -40,6 +40,8 @@ class RaceRoom extends Room {
 
     console.log(`Message received from ${client.sessionId}!`)
 
+    if (!player) return
+
     player.movement.set({
       n: data.up,
       s: data.down,
@@ -48,7 +50,7 @@ class RaceRoom extends Room {
     })
   }
 
-  onLeave (client) {
+  onLeave (client, consented) {
     delete this.state.players[client.sessionId]
 
     console.log(`Player ${client.sessionId} left!`)
